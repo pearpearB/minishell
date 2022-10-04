@@ -14,16 +14,19 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <limits.h>
+#include <stdlib.h>
 
 int main(void)
 {
-	char cd_path[PATH_MAX] = { "/Users/baejaeyeong/42_ing/" };
+	char cd_path[PATH_MAX] = { "../../minishell" }; // 상대경로도 가능
 
 	int result = chdir(cd_path);
 
 	if(result == 0)
-		printf("Success\n"); // ? 잘 모르겠다. success라고 뜨긴 하는데 뭐가 성공인거지?
+		printf("Success\n");
 	else
-		perror("Fail...\n");
+		printf("Fail\n");
+	if (system("pwd") == -1) // 현재 위치 확인
+        printf("Fail\n");
 	return (0);
 }

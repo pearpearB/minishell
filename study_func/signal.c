@@ -17,13 +17,16 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
 
 void sigint_handler(int signo)
 {
-	printf("^C를 누른 것을 기억하고 있어요. 다시 누르면 종료\n");
-	signal(SIGINT, SIG_DFL); // SIG_DFL : 신호 기본 처리, ^C의 기본 동작을 처리함
+	printf("종료 되었습니다. $? 입력시 종료코드 3 받아옵니다.\n");
+	exit(3);
+	// printf("^C를 누른 것을 기억하고 있어요. 다시 누르면 종료\n");
+	// signal(SIGINT, SIG_DFL); // SIG_DFL : 신호 기본 처리, ^C의 기본 동작을 처리함
 }
 
 int main()

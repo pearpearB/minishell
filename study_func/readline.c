@@ -16,11 +16,19 @@
 # include <stdlib.h>
 # include <readline/readline.h>
 # include <readline/history.h>
+# include <signal.h>
+
+void sigint_handler(int signo)
+{
+	printf("종료 되었습니다. $? 입력시 종료코드 1 받아옵니다.\n");
+	exit(1);
+}
 
 int main()
 {
     char *str;
 
+		signal(SIGINT, sigint_handler);
     while (1)
     {
         str = readline("jabae's prompt : ");
@@ -31,7 +39,7 @@ int main()
             break ;
 
         add_history(str); 
-				/* 방향키로 이전 명령어들을 가져올 수 있음 */
+		/* 방향키로 이전 명령어들을 가져올 수 있음 */
         free(str);
     }
     return(0);

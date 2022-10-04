@@ -25,7 +25,7 @@ int main()
 	char *str[2];
 	
 	// str[0] = "/bin/ls";
-	str[0] = "/bin/sh";
+	str[0] = "/bin/cat";
 	str[1] = NULL;
 
 	if (execve(str[0], str, NULL) == -1)

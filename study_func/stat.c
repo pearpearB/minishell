@@ -23,21 +23,21 @@ int main(void)
 {
 	struct stat	info;
 
-	stat("/Users/baejaeyeong/42_ing/", &info); // 디렉토리, 파일, 상대 경로도 가능하다.
+	printf("%d", stat("/Users/baejaeyeong/42", &info)); // 디렉토리, 파일, 상대 경로도 가능하다.
 
-	printf("ID : %d\n", info.st_dev);
-	printf("inode : %llu\n", info.st_ino);
-	printf("mode : %d\n", info.st_mode);
-	printf("hard link : %d\n", info.st_nlink);
-	printf("user ID : %d\n", info.st_uid);
-	printf("group ID : %d\n", info.st_gid);
-	printf("device ID : %d\n", info.st_rdev);
-	printf("size : %lld bytes\n", info.st_size);
-	printf("block size : %d\n", info.st_blksize);
-	printf("alloc blocks : %lld\n", info.st_blocks);
-	printf("time of last access : %s", ctime(&info.st_atime));
-	printf("time of last modification : %s", ctime(&info.st_mtime));
-	printf("time of last status change : %s", ctime(&info.st_ctime));
+	// printf("ID : %d\n", info.st_dev);
+	// printf("inode : %llu\n", info.st_ino);
+	// printf("mode : %d\n", info.st_mode);
+	// printf("hard link : %d\n", info.st_nlink);
+	// printf("user ID : %d\n", info.st_uid);
+	// printf("group ID : %d\n", info.st_gid);
+	// printf("device ID : %d\n", info.st_rdev);
+	// printf("size : %lld bytes\n", info.st_size);
+	// printf("block size : %d\n", info.st_blksize);
+	// printf("alloc blocks : %lld\n", info.st_blocks);
+	// printf("time of last access : %s", ctime(&info.st_atime));
+	// printf("time of last modification : %s", ctime(&info.st_mtime));
+	// printf("time of last status change : %s", ctime(&info.st_ctime));
 
 	return (0);
 }

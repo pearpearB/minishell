@@ -19,9 +19,10 @@
 #include <limits.h>
 
 int main() {
-  char cwd[PATH_MAX];
+	char cwd[PATH_MAX];
 
 	getcwd(cwd, sizeof(cwd));
 	printf("Directory: %s\n", cwd);
+	while (1);
 	return (0);
 }
